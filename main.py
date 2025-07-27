@@ -11,7 +11,7 @@ CLIENT_SECRET = st.secrets["client_secret"]
 REDIRECT_URI = st.secrets["redirect_uri"]
 
 # --- クエリパラメータを取得（LINE認証後の code を含む） ---
-query_params = st.experimental_get_query_params()
+query_params = st.query_params
 code = query_params.get("code", [None])[0]
 state = query_params.get("state", [None])[0]
 
